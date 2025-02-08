@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Cropper</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        form { display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { width: 100%; padding: 8px; margin-top: 10px; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+    <h2>YouTube Video Cropper</h2>
+
+    <form method="POST">
+        <label>YouTube URL:</label>
+        <input type="text" name="url" required>
+
+        <label>Start Time (MM.SS):</label>
+        <input type="text" name="start_time" placeholder="1.12" required>
+
+        <label>End Time (MM.SS):</label>
+        <input type="text" name="end_time" placeholder="2.01" required>
+
+        <button type="submit">Crop Video</button>
+    </form>
+
+    {% if success %}
+        <p style="color: green;">✅ Video cropped successfully! <a href="/download/{{ cropped_video }}">Download Here</a></p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">❌ Error: {{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
+
+<body>
+
+</body>
+</html>
